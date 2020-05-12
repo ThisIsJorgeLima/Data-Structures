@@ -9,6 +9,10 @@ return elements in First In First Out order.
    Make sure the Queue tests pass.
 3. What is the difference between using an array vs. a linked list when
    implementing a Queue?
++--------------------------------+
+ Array is a collection of elements of similar data type.
+ Linked List is an ordered collection of elemeonts of same type, which are connected to each other using pointers.
++--------------------------------+
 
 Stretch: What if you could only use instances of your Stack class to implement the Queue?
          What would that look like? How many Stacks would you need? Try it!
@@ -18,13 +22,14 @@ Stretch: What if you could only use instances of your Stack class to implement t
 class Queue:
     def __init__(self):
         self.size = 0
-        # self.storage = ?
+        self.storage = []
 
     def __len__(self):
-        pass
+        return len(self.storage)
 
     def enqueue(self, value):
-        pass
+        return self.storage.insert(0, value)
 
     def dequeue(self):
-        pass
+        while len(self.storage) > 0:
+            return self.storage.pop(-1)
