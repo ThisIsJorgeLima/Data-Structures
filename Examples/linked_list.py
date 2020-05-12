@@ -57,68 +57,65 @@ class linked_list:
         # not passing any parameters
         # only the instance of the class
 
+    def length(self):
+        # create another variable to point to our
+        # current node.
+        cur = self.head
+        total = 0
+        while cur.next != None:  # if cond is not
+                # incrementing the total
+            total += 1
+            # traversing to the next node
+            cur = cur.next
+            # once we're done will be exiting
+            # you'll know because the next node
+            # will be equal to none
+            return total
 
-def length(self):
-    # create another variable to point to our
-    # current node.
-    cur = self.head
-    total = 0
-    while cur.next != None:  # if cond is not
-            # incrementing the total
-        total += 1
-        # traversing to the next node
-        cur = cur.next
-        # once we're done will be exiting
-        # you'll know because the next node
-        # will be equal to none
-        return total
+            # Next will be creating a helper function
+            # to display the current contents of our list
 
-        # Next will be creating a helper function
-        # to display the current contents of our list
+    def display(self):
+        elems = []
+        # set a new variable for our crrent node
+        cur_node = self.head
+        # traversing over the nodes
+        while cur_node.next != None:  # if cond is not
+            # set the current node equal to the next node
+            cur_node = cur_node.next
+            # then append the data of the current node
+            # to our list of elements
+            elems.append(cur_node.data)
+            print(elems)
 
+        my_list = linked_list()
 
-def display(self):
-    elems = []
-    # set a new variable for our crrent node
-    cur_node = self.nead
-    # traversing over the nodes
-    while cur_node.next != None:  # if cond is not
-        # set the current node equal to the next node
-        cur_node = cur_node.next
-        # then append the data of the current node
-        # to our list of elements
-        elems.append(cur_node.data)
-        print(elems)
+        # my_list.display()
+        # my_list.append(1)
+        # my_list.append(2)
+        # my_list.display()
 
-    my_list = linked_list()
+        # extractor function
+        # which will allow us to pull out a data point
+        # at a certain index from our linked list
 
-    # my_list.display()
-    # my_list.append(1)
-    # my_list.append(2)
-    # my_list.display()
-
-    # extractor function
-    # which will allow us to pull out a data point
-    # at a certain index from our linked list
-
-
-def get(self, index):
-    if index >= self.length():
-        print("ERROR 'Get' Index out of range!")
-        return None
-    # creating a variable to contain
-    # the current index
-    cur_idx = 0
-    cur_node = self.head
-    while True:
-        # incrementing current node by setting the current node
-        # equal to the next node
-        cur_code = cur_node.next
-        # here we're going to check if the current index is equal
-        # to the index that was provided by the user
-        if cur_idx == index:
-            return cur_node.data
-            cur_idx += 1
+    def get(self, index):
+        if index >= self.length():
+            print("ERROR 'Get' Index out of range!")
+            return None
+        # creating a variable to contain
+        # the current index
+        cur_idx = 0
+        cur_node = self.head
+        while True:
+            # incrementing current node by setting the current node
+            # equal to the next node
+            cur_code = cur_node.next
+            # here we're going to check if the current index is equal
+            # to the index that was provided by the user
+            if cur_idx == index:
+                return cur_node.data
+                cur_idx += 1
 
     # helper function
 my_list = linked_list()
@@ -134,49 +131,49 @@ my_list.append(4)
 
 print("element at 2nd index: %d" % my_list.get(2)
 
-# implementing in our linked lis
-# erase function to erase a node at a
-# certain provided index so
-def erase(self, index):
-    print("ERROR: 'Erase' Index out of range!")
-    return
-    cur_idx=0
-    cur_node=self.head
-    # starting our loop:
-    while True:
-    # saving the current node
-    # as our last node:
-        last_node=cur_node
-        """
-        When we erase a node we have to
-        do a little bit of bookkeeping to make sure
-        after we've erased three the next node
-        in two points to the appropriate spot at four
-        so last node equals current node.
-        """
-        # increment current node by setting it
-        # equal to the next node
-        cur_node=cur_node.next
-        # checking to see if were at the index that
-        # the user provided
-        if cur_idx == index:
-            last_node.next=cur_node.next
-        # effectively this is going to be a racing current mode
-            return
-        cur_idx += 1
+    # implementing in our linked lis
+    # erase function to erase a node at a
+    # certain provided index so
+    def erase(self, index):
+        print("ERROR: 'Erase' Index out of range!")
+        return
+        cur_idx=0
+        cur_node=self.head
+        # starting our loop:
+        while True:
+        # saving the current node
+        # as our last node:
+            last_node=cur_node
+            """
+            When we erase a node we have to
+            do a little bit of bookkeeping to make sure
+            after we've erased three the next node
+            in two points to the appropriate spot at four
+            so last node equals current node.
+            """
+            # increment current node by setting it
+            # equal to the next node
+            cur_node=cur_node.next
+            # checking to see if were at the index that
+            # the user provided
+            if cur_idx == index:
+                last_node.next=cur_node.next
+            # effectively this is going to be a racing current mode
+                return
+            cur_idx += 1
 
-        # adding some helper code to make sure our erase function
-        # works properly
-my_list=linked_list()
-# append some data
-my_list.append(0)
-my_list.append(1)
-my_list.append(2)
-my_list.append(3)
-my_list.append(4)
+            # adding some helper code to make sure our erase function
+            # works properly
+    my_list=linked_list()
+    # append some data
+    my_list.append(0)
+    my_list.append(1)
+    my_list.append(2)
+    my_list.append(3)
+    my_list.append(4)
 
-my_list.display()
-# erase element at index one
-my_list.erase(1)
+    my_list.display()
+    # erase element at index one
+    my_list.erase(1)
 
-my_list.display()
+    my_list.display()
