@@ -72,12 +72,14 @@ class DoublyLinkedList:
     # method provided
 
     def remove_from_head(self):
+        # # remove the head
         value = self.head.value
+        # # implement
         self.delete(self.head)
         return value
         # if self.head is None:
         #     print("DLL already empty")
-        #     return
+        #     return none
         # elif self.head.next is None:
         #     deleted = self.head.value
         #     self.head = self.head.value
@@ -93,14 +95,21 @@ class DoublyLinkedList:
     the old tail node's next pointer accordingly."""
 
     def add_to_tail(self, value):
+        # make a new node
         new_node = ListNode(value, None, None)
+        # increment the length
         self.length += 1
+        # check if the list is empty or not:
         if not self.head and not self.tail:
             self.head = new_node
             self.tail = new_node
         else:
+            # the new node becomes the head of our list
+            # set the current head's previous to the new node
             new_node.prev = self.tail
+            # set the new node's next to the current head
             self.tail.next = new_node
+            # reassign self.head to point to the new node
             self.tail = new_node
 
     """Removes the List's current tail node, making the
@@ -116,9 +125,12 @@ class DoublyLinkedList:
     List and inserts it as the new head node of the List."""
 
     def move_to_front(self, node):
+        # check if the node is the head:
         if node is self.head:
-            return
+            return None
+        # store a reference to the node we're going to move
         value = node.value
+        # lets check if its the tail
         self.delete(node)
         self.add_to_head(value)
 
@@ -136,22 +148,33 @@ class DoublyLinkedList:
     the node was the head or the tail"""
 
     def delete(self, node):
+        # decrement the length
+        # don't decrement if list is empty
         self.length -= 1
+        # check if head and tail are pointing properly
         if self.head is self.tail:
+            # getting rid of single node by = None:
             self.head = None
             self.tail = None
+            # check if the node is the head of the list
         elif self.head is node:
             self.head = node.next
+            # Let's delete the node:
             node.delete()
+            # check to see if node is previous
         elif self.tail is node:
             self.tail = node.prev
+            # delete node:
             node.delete()
+            # otherwise, there's no additional references we need to update
         else:
             node.delete()
 
     """Returns the highest value currently in the list"""
 
     def get_max(self):
+        # init a variable that will keep track of the largest
+        # element we've seen
         max_value = self.head.value
         current = self.head
         while current is not None:
