@@ -34,7 +34,7 @@ class linked_list:
     def append(self, data):
         # We're gonna be creating a new node of the class node
         # and passing the data into that.
-        # This will set the data poing inside of the node
+        # This will set the data going inside of the node
         new_node = node(data)
         # now will be creating a variable to store the node
         # that we're currently looking at
@@ -88,16 +88,18 @@ class linked_list:
             elems.append(cur_node.data)
             print(elems)
 
-        my_list = linked_list()
 
-        # my_list.display()
-        # my_list.append(1)
-        # my_list.append(2)
-        # my_list.display()
+# my_list = linked_list()
 
-        # extractor function
-        # which will allow us to pull out a data point
-        # at a certain index from our linked list
+# my_list.display()
+# my_list.append(1)
+# my_list.append(2)
+# my_list.display()
+
+# extractor function
+# which will allow us to pull out a data point
+# at a certain index from our linked list
+
 
     def get(self, index):
         if index >= self.length():
@@ -117,33 +119,35 @@ class linked_list:
                 return cur_node.data
                 cur_idx += 1
 
-    # helper function
-my_list = linked_list()
-my_list.append(1)
-my_list.append(2)
-my_list.append(3)
-my_list.append(4)
+
+# # helper function
+# my_list = linked_list()
+# my_list.append(1)
+# my_list.append(2)
+# my_list.append(3)
+# my_list.append(4)
 
 # my_list.display()
 #******************#
 #*****HELP********#
 #**^^ABOVE^^*****#
 
-print("element at 2nd index: %d" % my_list.get(2)
+# print("element at 2nd index: %d" % my_list.get(2)
 
-    # implementing in our linked lis
-    # erase function to erase a node at a
-    # certain provided index so
+# implementing in our linked lis
+# erase function to erase a node at a
+# certain provided index so
+
     def erase(self, index):
         print("ERROR: 'Erase' Index out of range!")
         return
-        cur_idx=0
-        cur_node=self.head
+        cur_idx = 0
+        cur_node = self.head
         # starting our loop:
         while True:
-        # saving the current node
-        # as our last node:
-            last_node=cur_node
+            # saving the current node
+            # as our last node:
+            last_node = cur_node
             """
             When we erase a node we have to
             do a little bit of bookkeeping to make sure
@@ -153,27 +157,27 @@ print("element at 2nd index: %d" % my_list.get(2)
             """
             # increment current node by setting it
             # equal to the next node
-            cur_node=cur_node.next
+            cur_node = cur_node.next
             # checking to see if were at the index that
             # the user provided
             if cur_idx == index:
-                last_node.next=cur_node.next
+                last_node.next = cur_node.next
             # effectively this is going to be a racing current mode
                 return
             cur_idx += 1
 
             # adding some helper code to make sure our erase function
             # works properly
-    my_list=linked_list()
-    # append some data
-    my_list.append(0)
-    my_list.append(1)
-    my_list.append(2)
-    my_list.append(3)
-    my_list.append(4)
+my_list = linked_list()
+# append some data
+my_list.append(0)
+my_list.append(1)
+my_list.append(2)
+my_list.append(3)
+my_list.append(4)
 
-    my_list.display()
-    # erase element at index one
-    my_list.erase(1)
+my_list.display()
+# erase element at index one
+my_list.erase(1)
 
-    my_list.display()
+my_list.display()
